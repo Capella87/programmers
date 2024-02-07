@@ -1,8 +1,11 @@
+*.dll
 *.exe
 *.ilk
 *.in
+*.lib
 *.obj
 *.out
 *.pdb
 bin/
 obj/
+.vscode
