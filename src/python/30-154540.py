@@ -29,7 +29,7 @@ def bfs(mp, x, y, visitmap, width, height):
             new_y = cur[1] + ymove[i]
             if new_x < 0 or new_y < 0 or new_x >= height or new_y >= width:
                 continue
-            if visitmap[new_x][new_y] == False and mp[new_x][new_y] != 'X':
+            if not visitmap[new_x][new_y] and mp[new_x][new_y] != 'X':
                 visitmap[new_x][new_y] = True
                 rt += int(mp[new_x][new_y])
                 deque.append(q, [new_x, new_y])
@@ -45,7 +45,7 @@ def solution(maps):
 
     for i in range(height):
         for j in range(width):
-            if visitmap[i][j] == False and maps[i][j] != 'X':
+            if not visitmap[i][j] and maps[i][j] != 'X':
                 answer.append(bfs(maps, i, j, visitmap, width, height))
     answer.sort()
     if len(answer) == 0:
